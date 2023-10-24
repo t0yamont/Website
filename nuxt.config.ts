@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     'vue-email/nuxt',
     '@nuxtjs/web-vitals',
     '@nuxtjs/fontaine',
-    '@nuxt/ui',
+    // '@nuxt/ui',
     '@nuxtjs/tailwindcss',
   ],
   runtimeConfig: {
@@ -29,5 +29,8 @@ export default defineNuxtConfig({
     configPath: 'tailwind.config.ts',
     exposeConfig: false,
     injectPosition: 0,
+  },
+  routeRules: {
+    '/': { prerender: true }
   }
 })
