@@ -48,6 +48,18 @@ export default {
         950: '#450c0a',
       },
     },
+    extend: {
+      height: {
+        '3/4-screen': '75vh'
+      },
+      maxHeight: {
+        'inherit': 'inherit',
+      },
+      justifyItems: {
+        'flex-start': 'flex-start',
+        'flex-end': 'flex-end,'
+      }
+    },
   },
   plugins: [],
 } satisfies Config
