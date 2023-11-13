@@ -22,7 +22,7 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
-  content: {
-
-  }
+  site: {
+    url: 'https://team-surtes.github.io/Nuxt/',
+  },
 })
