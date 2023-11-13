@@ -9,7 +9,6 @@
             <nav class="hidden xl:flex w-full gap-4 items-center" style="justify-content: flex-end;">
                 <NuxtLink to="/blog">News Articles</NuxtLink>
                 <NuxtLink to="/sponsors">Our Sponsors</NuxtLink>
-                <NuxtLink to="/contact-us">Contact Us</NuxtLink>
             </nav>
             <button class="block xl:hidden h-full w-16 absolute right-0 top-0 mr-4" @click="drawerIsOpen = true"><Icon name="ic:baseline-dehaze" color="white" /></button>
         </header>
@@ -25,7 +24,6 @@
             <div id="drawer-links" class="px-8 flex flex-col gap-y-8">
                 <NuxtLink to="/blog" class="h-12">News Articles</NuxtLink>
                 <NuxtLink to="/sponsors" class="h-12">Our Sponsors</NuxtLink>
-                <NuxtLink to="/contact-us" class="h-12">Contact Us</NuxtLink>
             </div>
         </div>
     </div>
