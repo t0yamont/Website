@@ -1,13 +1,10 @@
 <template>
-  <HomepageHero />
-  <HomepageAchievements />
-  <HomepageSponsors />
-  <HomepageContactUs />
+    <HomepageHero />
+    <HomepageContactUs />
 </template>
 
 <script setup lang="ts">
 definePageMeta({
-  layout: 'default',
-  title: 'Home',
-})
+  title: "Home",
+});
 </script>

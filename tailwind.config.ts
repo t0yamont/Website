@@ -50,6 +50,9 @@ export default {
     },
     extend: {
       height: {
+        '1/4-screen': '25vh',
+        '1/3-screen': '33vh',
+        '2/3-screen': '66vh',
         '3/4-screen': '75vh'
       },
       maxHeight: {
