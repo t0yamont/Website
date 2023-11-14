@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/robots',
     'nuxt-simple-sitemap',
+    '@nuxtjs/google-fonts',
     '@nuxtjs/fontaine',
     '@nuxtjs/tailwindcss',
   ],
@@ -24,6 +25,12 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: 'https://team-surtes.github.io/Nuxt/',
+    url: 'https://teamsurtes.nuxt.space/',
   },
+  googleFonts: {
+    families: {
+      Onest: true
+    },
+    fontsDir: 'public/fonts'
+  }
 })
