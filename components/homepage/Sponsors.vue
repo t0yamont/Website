@@ -5,14 +5,14 @@
             <div id="principle-sponsors" class="flex flex-row gap-4 justify-center">
               <div v-for="sponsor in principleSponsors">
                 <NuxtLink :to="sponsor.url">
-                  <NuxtImg :src="sponsor.logoSrc" alt="{{sponsor.name}} Logo" />
+                  <NuxtImg src="/img/fs-se4.webp" />
                 </NuxtLink>
               </div>
             </div>
             <div id="sponsors" class="flex flex-row gap-8 flex-wrap justify-center">
               <div v-for="sponsor in nonPrincipleSponsors">
                 <NuxtLink :to="sponsor.url">
-                  <NuxtImg :src="sponsor.logoSrc" alt="{{sponsor.name}} Logo" />
+                  <NuxtImg src="/img/fs-se4.webp" />
                 </NuxtLink>
               </div>
             </div>

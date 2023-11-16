@@ -1,6 +1,6 @@
 ---
 name: 'Altair'
-logoSrc: '/public/sponsor-logos/altair.svg'
+logoSrc: '/sponsor-logos/altair.svg'
 url: 'https://altair.com'
 isPrimary: 'true'
 ---
