@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: 'https://teamsurtes.nuxt.space/',
+    url: 'https://new.teamsurtes.com/',
   },
   googleFonts: {
     families: {

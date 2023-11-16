@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="404">
-    <div class="bg-background text-text-200 min-h-screen">
+    <div class="bg-background text-text-200 min-h-screen font-onest">
       <Navigation />
       <article class="min-h-screen ">
         <div id="content" class="pt-32 text-center">

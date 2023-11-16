@@ -29,6 +29,7 @@
     "@nuxt/image": "^1.0.0",
     "@nuxt/ui": "^2.9.0",
     "@nuxtjs/robots": "^3.0.0",
-    "nuxt-directus": "^5.5.0"
+    "nuxt-directus": "^5.5.0",
+    "tailwindcss-fluid-type": "^2.0.3"
   }
 }

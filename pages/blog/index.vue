@@ -13,9 +13,8 @@
 </template>
 
 <script setup lang="ts">
-function formatDate(date) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' }
-  return new Date(date).toLocaleDateString('en', options)
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })
 }
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div id="hero" class="h-3/4-screen relative">
+    <div id="hero" class="homepage-hero h-3/4-screen relative">
         <div id="hero-media" class="h-full w-full bg-surtes-800">
             <div id="inner-hero-media" class="flex text-center justify-center content-center">
                 <h1>We are Team SURTES</h1>
@@ -38,6 +38,6 @@
 }
 </style>
 
-<script setup lang="ts">
+<style lang="scss">
 
-</script>
+</style>

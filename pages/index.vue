@@ -1,6 +1,8 @@
 <template>
   <HomepageHero />
+  <HomepageAboutUs />
   <HomepageAchievements />
+  <HomepageSponsors />
   <HomepageContactUs />
 </template>
 
