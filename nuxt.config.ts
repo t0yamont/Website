@@ -37,5 +37,9 @@ export default defineNuxtConfig({
       Onest: true
     },
     fontsDir: 'fonts'
-  }
+  },
+  routeRules: {
+    '/blog' : { 'prerender': false },
+    '/blog/**' : { 'prerender': false },
+  },
 })
