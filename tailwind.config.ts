@@ -56,6 +56,13 @@ export default {
         '2/3-screen': '66vh',
         '3/4-screen': '75vh'
       },
+      minHeight: {
+        '1/4-screen': '25vh',
+        '1/3-screen': '33vh',
+        '1/2-screen': '55vh',
+        '2/3-screen': '66vh',
+        '3/4-screen': '75vh',
+      },
       maxHeight: {
         'inherit': 'inherit',
       },
@@ -70,8 +77,8 @@ export default {
     },
     fluidType: {
       settings: {
-        fontSizeMin: 1.125,
-        fontSizeMax: 1.25,
+        fontSizeMin: 1.2,
+        fontSizeMax: 1.4,
         ratioMin: 1.125,
         ratioMax: 1.2,
         screenMin: 20,
@@ -84,14 +91,14 @@ export default {
         'sm': [-1, 1.6],
         'base': [0, 1.6],
         'lg': [1, 1.6],
-        'xl': [2, 1.2],
-        '2xl': [3, 1.2],
+        'xl': [2, 1.4],
+        '2xl': [3, 1.3],
         '3xl': [4, 1.2],
-        '4xl': [5, 1.1],
-        '5xl': [6, 1.1],
+        '4xl': [5, 1.2],
+        '5xl': [6, 1.2],
         '6xl': [7, 1.1],
-        '7xl': [8, 1],
-        '8xl': [9, 1],
+        '7xl': [8, 1.1],
+        '8xl': [9, 1.1],
         '9xl': [10, 1],
       }
     },

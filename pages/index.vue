@@ -3,7 +3,7 @@
   <HomepageAboutUs />
   <HomepageAchievements />
   <HomepageSponsors />
-  <HomepageContactUs />
+<!--  <HomepageContactUs />-->
 </template>
 
 <script setup lang="ts">
