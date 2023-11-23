@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 const srcDir = __dirname;
 
@@ -55,15 +56,58 @@ export default {
         '2/3-screen': '66vh',
         '3/4-screen': '75vh'
       },
+      minHeight: {
+        '1/4-screen': '25vh',
+        '1/3-screen': '33vh',
+        '1/2-screen': '55vh',
+        '2/3-screen': '66vh',
+        '3/4-screen': '75vh',
+      },
       maxHeight: {
         'inherit': 'inherit',
+      },
+      maxWidth: {
+        '8xl': '80rem',
+        '9xl': '88rem',
       },
       justifyItems: {
         'flex-start': 'flex-start',
         'flex-end': 'flex-end,'
       }
     },
+    fluidType: {
+      settings: {
+        fontSizeMin: 1.2,
+        fontSizeMax: 1.4,
+        ratioMin: 1.125,
+        ratioMax: 1.2,
+        screenMin: 20,
+        screenMax: 96,
+        unit: 'rem',
+        prefix: ''
+      },
+      values: {
+        'xs': [-2, 1.6],
+        'sm': [-1, 1.6],
+        'base': [0, 1.6],
+        'lg': [1, 1.6],
+        'xl': [2, 1.4],
+        '2xl': [3, 1.3],
+        '3xl': [4, 1.2],
+        '4xl': [5, 1.2],
+        '5xl': [6, 1.2],
+        '6xl': [7, 1.1],
+        '7xl': [8, 1.1],
+        '8xl': [9, 1.1],
+        '9xl': [10, 1],
+      }
+    },
+    fontFamily: {
+      onest: ['Onest', ...fontFamily.sans]
+    }
   },
-  plugins: [],
+  plugins: [
+    require('tailwindcss-fluid-type'),
+  ],
 } satisfies Config
 
