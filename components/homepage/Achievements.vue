@@ -8,7 +8,7 @@
       </div>
       <div class="achievement-card grid grid-cols-[75px_auto] items-center gap-4 md:flex md:flex-col md:justify-between">
         <Icon name="material-symbols:leaf-spark-rounded" color="#60b45a" class="mx-auto text-8xl lg:text-6xl 2xl:text-4xl" />
-        <p>{YEAR} IMechE Most Efficient Car Award</p>
+        <p>2019 IMechE Most Efficient Car Award</p>
       </div>
       <div class="achievement-card grid grid-cols-[75px_auto] items-center gap-4 md:flex md:flex-col md:justify-between">
         <Icon name="material-symbols:bolt" color="#fcc01e" class="mx-auto text-8xl lg:text-6xl 2xl:text-4xl" />
