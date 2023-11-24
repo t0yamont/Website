@@ -18,7 +18,7 @@
             </div>
           </div>
         </div>
-  </div>x
+  </div>
 </template>
 
 <style scoped lang="scss">
