@@ -1,7 +1,7 @@
 ---
 title: 'New Website'
 slug: 'new-website'
-draft: true
+draft: false
 keyImage: '/img/fs-se4.webp'
 ---
 

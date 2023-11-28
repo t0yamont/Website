@@ -1,6 +1,6 @@
 ---
 name: 'Altair'
 logoSrc: '/sponsor-logos/altair.svg'
-url: 'https://altair.com'
+url: 'https://altair.com/'
 ---
-A description. Lorem ipsum dolor sit amet.
+Description of Altair goes here.
