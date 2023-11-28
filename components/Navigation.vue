@@ -20,6 +20,8 @@
             <nav id="drawer-links" class="px-8 flex flex-col gap-y-8">
                 <NuxtLink to="/blog" class="h-12" @click="drawerIsOpen = false">News Articles</NuxtLink>
                 <NuxtLink to="/sponsors" class="h-12" @click="drawerIsOpen = false">Our Sponsors</NuxtLink>
+              <NuxtLink to="/electric" class="h-12" @click="drawerIsOpen = false">SURTES Electric</NuxtLink>
+              <NuxtLink to="/combustion" class="h-12" @click="drawerIsOpen = false">SURTES Combustion</NuxtLink>
             </nav>
         </div>
     </div>

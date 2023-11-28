@@ -1,26 +1,24 @@
 <template>
-    <div id="article-image" class="w-full h-auto" v-if="!!articleImgSrc">
-      <NuxtImg src="{{articleImgSrc}}" class="w-full h-full object-cover" />
+  <div id="blog-article" class="max-w-full lg:max-w-5xl mx-auto px-8 xl:px-0">
+    <span id="breadcrumbs" class="my-4"><NuxtLink class="underline" to="/">Home</NuxtLink> > <NuxtLink class="underline" to="/blog">Blog</NuxtLink> > <span>{{ article.title }}</span></span>
+    <div class="my-4">
+      <h2>{{ article.title }}</h2>
+      <span class="text-md">Published {{ formatDate(article.createdAt) }}</span>
     </div>
-    <div id="blog-article" class="pt-24 px-4">
-      <div class="my-4">
-        <NuxtLink to="/blog" class="py-4 px-6 bg-background text-white text-xl rounded-full"><Icon name="ic:round-arrow-back" color="white" class="my-auto text-2xl"/> Back To Article List</NuxtLink>
-      </div>
-      <ContentDoc v-slot="{ doc }">
-        <article>
-          <ContentRenderer :value="doc" />
-        </article>
-<!--            <template #not-found>-->
-<!--              <h1>Oops, we'll screw this loose nut!</h1>-->
-<!--              <p>In the meantime, why not tap your spanner on some other pages?</p>-->
-<!--            </template>-->
-      </ContentDoc>
-    </div>
+    <NuxtImg v-if="article.keyImage" :src="article.keyImage" class="h-auto w-full rounded-xl" />
+    <ContentDoc class="my-8" />
+  </div>
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
+function formatDate(date: string) {
+  return new Date(date).toLocaleDateString('en', { year: 'numeric', month: 'long', day: 'numeric' })
+}
 
-// Get the article image
-const articleImgSrc = '/img/fs-se4.webp'
+const route = useRoute();
+const articleName = route.path.split('/').pop();
+
+const { data } = await useAsyncData('blog-article', () => queryContent('blog', articleName).findOne());
+const article = data._value;
+
 </script>

@@ -7,10 +7,11 @@ export default defineNuxtConfig({
     }
   },
   modules: [
-    '@nuxthq/studio',
-    'nuxt-icon',
-    '@nuxt/content',
     '@nuxt/image',
+    '@nuxthq/studio',
+    '@nuxt/content',
+    'nuxt-content-git',
+    'nuxt-icon',
     '@nuxtjs/color-mode',
     '@nuxtjs/robots',
     'nuxt-simple-sitemap',

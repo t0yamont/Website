@@ -4,7 +4,6 @@ slug: 'new-website'
 draft: true
 keyImage: '/img/fs-se4.webp'
 ---
-# New Team SURTES Website
 
 We have a new website!
 <!--more-->
