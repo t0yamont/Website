@@ -77,7 +77,7 @@ export default {
       },
       justifyItems: {
         'flex-start': 'flex-start',
-        'flex-end': 'flex-end,'
+        'flex-end': 'flex-end',
       }
     },
     fluidType: {
@@ -89,7 +89,7 @@ export default {
         screenMin: 20,
         screenMax: 96,
         unit: 'rem',
-        prefix: ''
+        prefix: '',
       },
       values: {
         'xs': [-2, 1.6],
