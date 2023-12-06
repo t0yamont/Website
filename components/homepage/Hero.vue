@@ -9,12 +9,12 @@
           <p class="hidden lg:block">Hover to learn about our developments.</p>
           <p class="block lg:hidden">Tap to learn about our developments.</p>
           <div id="powertrain-cards" class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 lg:gap-x-0 mt-8">
-            <div id="electric-powertrain" class="hover:bg-text-500 border-surtes-900 rounded-r-2xl h-40">
-                <button class="w-full h-full">SURTES Electric</button>
+            <div id="electric-powertrain" class= " hover:bg-text-500 border-surtes-900 rounded-r-2xl h-40">
+                <button class="w-3/4 h-3/4" >SURTES Electric</button>
             </div>
             <span class="hidden lg:block"></span>
-            <div id="combustion-powertrain" class="hover:bg-text-500 border-surtes-900 rounded-l-2xl h-40">
-                <button class="w-full h-full">SURTES Combustion</button>
+            <div id="combustion-powertrain" class= " hover:bg-text-500 border-surtes-900 rounded-l-2xl h-40">
+                <button class="w-3/4 h-3/4" >SURTES Combustion</button>
             </div>
           </div>
         </div>
@@ -40,6 +40,18 @@
     #inner-hero-media > h1 {
         content: "SURTES Combustion Powertrain"
     }
+}
+
+#powertrain-cards {
+    justify-content: center;
+}
+
+#electric-powertrain {
+    transition: background-color 0.3s ease;
+}
+
+#combustion-powertrain {
+    transition: background-color 0.3s ease;
 }
 </style>
 
