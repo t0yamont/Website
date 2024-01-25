@@ -1,4 +1,3 @@
-
 ---
 name: 'James Sherlock'
 logoSrc: 'sponsor-logos/James Sherlock No BMW Transparent background.png'
