@@ -1,20 +1,19 @@
 <template>
     <div id="hero" class="homepage-hero h-3/4-screen relative">
         <div id="hero-media" class="h-full w-full bg-gradient-to-b from-surtes-950 to-surtes-900">
-            <div id="inner-hero-media" class="flex text-center justify-center content-center">
-            </div>
+            <video class="h-full w-auto object-cover bg-white" autoplay loop>
+                <source src="/mov/title-page-broll.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
         <div id="hero-bottom" class="absolute bottom-0 left-0 right-0 text-center">
           <h1>We are Team SURTES</h1>
-          <p class="hidden lg:block">Hover to learn about our developments.</p>
-          <p class="block lg:hidden">Tap to learn about our developments.</p>
-          <div id="powertrain-cards" class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 lg:gap-x-0 mt-8">
-            <div id="electric-powertrain" class="hover:bg-text-500 border-surtes-900 rounded-r-2xl h-40">
-                <button class="w-full h-full">SURTES Electric</button>
+          <div id="powertrain-pills" class="grid grid-cols-2 w-1/2 mx-auto gap-4 py-8">
+            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12">
+                <button class="w-full h-full">Electric</button>
             </div>
-            <span class="hidden lg:block"></span>
-            <div id="combustion-powertrain" class="hover:bg-text-500 border-surtes-900 rounded-l-2xl h-40">
-                <button class="w-full h-full">SURTES Combustion</button>
+            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12">
+                <button class="w-full h-full">Combustion</button>
             </div>
           </div>
         </div>
@@ -22,26 +21,12 @@
 </template>
 
 <style scoped lang="scss">
-#hero:has(#electric-powertrain:hover) {
-    #hero-media {
-        background-color: #800000 !important;
-    }
-
-    #inner-hero-media > h1 {
-        content: "SURTES Electric Powertrain"
-    }
-}
-
-#hero:has(#combustion-powertrain:hover) {
-    #hero-media {
-        background-color: goldenrod !important;
-    }
-
-    #inner-hero-media > h1 {
-        content: "SURTES Combustion Powertrain"
-    }
+.glass {
+  background: rgba( 69, 12, 10, 0.75 );
+  box-shadow: 0 8px 32px 0 rgba( 69, 12, 10, 0.37 );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
 }
 </style>
-
 <script setup lang="ts">
 </script>
