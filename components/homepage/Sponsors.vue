@@ -5,7 +5,7 @@
             <div id="sponsors" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12 justify-center items-center py-8">
               <div v-for="sponsor in sponsors">
                 <NuxtLink :to="sponsor.url">
-                  <NuxtImg :src="sponsor.logoSrc" />
+                  <NuxtImg :src="sponsor.logoSrc" class="mx-auto" />
                 </NuxtLink>
               </div>
             </div>
