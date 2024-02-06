@@ -13,7 +13,7 @@
               <NuxtLink to="/combustion" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Combustion</NuxtLink>
           </nav>
           <button id="b1" class="block h-full w-16 mr-4 transform hover:scale-110 rounded-md p-0" @click="drawerIsOpen = !drawerIsOpen">
-            <Icon :name="drawerIsOpen ? 'ic:round-close' : 'ic:baseline-dehaze'" color="white" class="text-3xl lg:text-2xl" />
+            <Icon  :name="drawerIsOpen ? 'ic:round-close' : 'ic:baseline-dehaze'" color="white" class="text-3xl lg:text-2xl" />
           </button>
       </header>
   </div>
