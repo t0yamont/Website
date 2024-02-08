@@ -8,11 +8,11 @@
         </div>
         <div id="hero-bottom" class="absolute bottom-0 left-0 right-0 text-center">
           <h1>We are Team SURTES</h1>
-          <div id="powertrain-pills" class="grid grid-cols-2 w-1/2 mx-auto gap-4 py-8">
-            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12">
-                <button class="w-full h-full">Electric</button>
+          <div id="powertrain-pills" class="grid grid-cols-2 w-1/2 mx-auto gap-4 py-8 min-w-80">
+            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
+                <button class="w-full h-full ">Electric</button>
             </div>
-            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12">
+            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
                 <button class="w-full h-full">Combustion</button>
             </div>
           </div>
