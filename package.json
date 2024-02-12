@@ -29,6 +29,7 @@
     "@nuxt/ui": "^2.9.0",
     "@nuxthq/studio": "^1.0.4",
     "@nuxtjs/robots": "^3.0.0",
+    "gsap": "^3.12.5",
     "nuxt-content-git": "^3.0.32",
     "tailwindcss-fluid-type": "^2.0.3"
   }

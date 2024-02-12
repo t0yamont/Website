@@ -5,55 +5,23 @@
             </div>
         </div>
         <div id="hero-bottom" class="absolute bottom-0 left-0 right-0 text-center">
-          <h1>We are Team SURTES</h1>
-          <p class="hidden lg:block">Hover to learn about our developments.</p>
-          <p class="block lg:hidden">Tap to learn about our developments.</p>
+          <h1 class="text-white">We are Team SURTES</h1>
+          <p class="hidden lg:block text-gray-400">Hover to learn about our developments.</p>
+          <p class="block lg:hidden text-grey-400">Tap to learn about our developments.</p>
           <div id="powertrain-cards" class="grid grid-cols-2 lg:grid-cols-3 gap-x-4 lg:gap-x-0 mt-8">
             <div id="electric-powertrain" class= " hover:bg-text-500 border-surtes-900 rounded-r-2xl h-40">
-                <button class="w-3/4 h-3/4" >SURTES Electric</button>
+                <button class="w-3/4 h-3/4 bg-transparent text-white rounded-r-2x1 transition duration-300 ease-in-out" >SURTES Electric</button>
             </div>
             <span class="hidden lg:block"></span>
             <div id="combustion-powertrain" class= " hover:bg-text-500 border-surtes-900 rounded-l-2xl h-40">
-                <button class="w-3/4 h-3/4" >SURTES Combustion</button>
+                <button class="w-3/4 h-3/4 bg-transparent text-white rounded-r-2x1 transition duration-300 ease-in-out" >SURTES Combustion</button>
             </div>
           </div>
         </div>
   </div>
 </template>
 
-<style scoped lang="scss">
-#hero:has(#electric-powertrain:hover) {
-    #hero-media {
-        background-color: #800000 !important;
-    }
-
-    #inner-hero-media > h1 {
-        content: "SURTES Electric Powertrain"
-    }
-}
-
-#hero:has(#combustion-powertrain:hover) {
-    #hero-media {
-        background-color: goldenrod !important;
-    }
-
-    #inner-hero-media > h1 {
-        content: "SURTES Combustion Powertrain"
-    }
-}
-
-#powertrain-cards {
-    justify-content: center;
-}
-
-#electric-powertrain {
-    transition: background-color 0.3s ease;
-}
-
-#combustion-powertrain {
-    transition: background-color 0.3s ease;
-}
-</style>
-
 <script setup lang="ts">
+    import { gsap } from 'gsap'
+
 </script>
