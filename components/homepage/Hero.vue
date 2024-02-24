@@ -12,7 +12,7 @@
             <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
                 <button class="w-full h-full ">Electric</button>
             </div>
-            <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
+            <div id="combustion-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
                 <button class="w-full h-full">Combustion</button>
             </div>
           </div>
@@ -29,4 +29,27 @@
 }
 </style>
 <script setup lang="ts">
+import { gsap } from "gsap";
+
+const electricButton = document.getElementById('electric-powertrain');
+const combustionButton = document.getElementById('combustion-powertrain');
+
+
+const expandAnimation = (element: HTMLElement, url: string) => {
+  gsap.to(element, {
+    duration: 1,
+    width: '100%',
+    height: '100%',
+    ease: 'power1.out',
+    onComplete: () => {
+
+      window.location.href = url;
+    }
+
+  });
+};
+
+electricButton?.addEventListener('click', () => expandAnimation(electricButton, '/electric'));
+combustionButton?.addEventListener('click', () => expandAnimation(combustionButton, '/combustion'));
+
 </script>

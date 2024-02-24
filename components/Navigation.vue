@@ -1,69 +1,64 @@
 <template>
-    <div id="navigation" :data-drawer-state="drawerIsOpen" class="z-50 sticky" :style="{ '--header-bg': headerBackgroundColor }">
-        <header class="fixed top-0 left-0 right-0 h-24 px-8 py-4 bg-surtes-950">
-            <div id="logo" class="h-full">
-                <NuxtLink to="/">
-                    <NuxtImg src="/surtes-logo.svg" class="h-full mx-auto" />
-                </NuxtLink>
-            </div>
-            <button class="block h-full w-16 absolute right-0 top-0 mr-4" @click="drawerIsOpen = true"><Icon name="ic:baseline-dehaze" color="white" class="text-3xl lg:text-2xl" /></button>
-        </header>
-        <div id="drawer" class="fixed w-screen h-screen top-0 right-0 bottom-0 left-0 bg-background gap-16 z-50">
-            <div id="drawer-header" class="relative h-24 px-8 pt-4">
-              <div id="logo" class="h-full">
-                <NuxtLink to="/">
-                  <NuxtImg src="/surtes-logo.svg" class="h-full" />
-                </NuxtLink>
-              </div>
-              <button @click="drawerIsOpen = false" class="h-full w-16 absolute right-0 top-0 mr-4"><Icon name="ic:round-close" color="white" class="text-3xl lg:text-2xl" /></button>
-            </div>
-            <nav id="drawer-links" class="px-8 flex flex-col gap-y-8">
-                <NuxtLink to="/blog" class="h-12" @click="drawerIsOpen = false">News Articles</NuxtLink>
-                <NuxtLink to="/sponsors" class="h-12" @click="drawerIsOpen = false">Our Sponsors</NuxtLink>
-              <NuxtLink to="/electric" class="h-12" @click="drawerIsOpen = false">SURTES Electric</NuxtLink>
-              <NuxtLink to="/combustion" class="h-12" @click="drawerIsOpen = false">SURTES Combustion</NuxtLink>
-            </nav>
-        </div>
-    </div>
+  <div id="navigation" :data-drawer-state="drawerIsOpen" class="z-50 sticky top-0">
+      <header :style="{ backgroundColor: headerBackgroundColor }" class="glass fixed top-0 left-0 right-0 h-24 px-8 py-4 bg-surtes-950 flex justify-between text-center">
+          <div id="logo" class="h-full" :class="{ 'mx-auto': !drawerIsOpen, 'transition-all duration-500': true, 'h-16': drawerIsOpen }">
+              <NuxtLink to="/">
+                  <NuxtImg src="/surtes-logo.svg" class="h-full mx-auto" />
+              </NuxtLink>
+          </div>
+          <nav id="drawer-links" class="flex gap-x-12 font-black" v-if="drawerIsOpen">
+              <NuxtLink to="/blog" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">News Articles</NuxtLink>
+              <NuxtLink to="/sponsors" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">Our Sponsors</NuxtLink>
+              <NuxtLink to="/electric" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Electric</NuxtLink>
+              <NuxtLink to="/combustion" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Combustion</NuxtLink>
+          </nav>
+          <button id="b1" class="block h-full w-16 mr-4 transform hover:scale-110 rounded-md p-0" @click="drawerIsOpen = !drawerIsOpen">
+            <Icon  :name="drawerIsOpen ? 'ic:round-close' : 'ic:baseline-dehaze'" color="white" class="text-3xl lg:text-2xl" />
+          </button>
+      </header>
+  </div>
 </template>
 
 <style scoped lang="scss">
 #navigation > header {
   background: var(--header-bg);
+
+}
+#logo{
+  height: 4.75rem;
+  transition: height 0.5s;
+  align-items: center;
 }
 
-#navigation[data-drawer-state="false"] > #drawer {
-  display: none;
+#drawer-links{
+  margin-top: 2.2rem;
+}
+#b1{
+  margin-top: 1.1rem;
+}
+.glass {
+  background: rgba( 69, 12, 10, 0.75 );
+  box-shadow: 0 8px 32px 0 rgba( 69, 12, 10, 0.37 );
+  backdrop-filter: blur( 5px );
+  -webkit-backdrop-filter: blur( 5px );
 }
 
-#navigation[data-drawer-state="true"] > #drawer {
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-</style>
-
-<style lang="scss">
-#navigation[data-drawer-state="true"] {
-  ~ main, ~ footer {
-    display: none;
-  }
-}
 </style>
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue';
 
 let drawerIsOpen = ref(false);
-let headerBackgroundColor = ref('#450c0a');
+let headerBackgroundColor = ref('rgba( 69, 12, 10, 0.75 )');
 const handleScroll = () => {
-  // Calc scroll pct
+  // Clac scroll pct
   const scrollPercentage = (window.scrollY / window.innerHeight) * 100;
 
-  // Determine which color to show
+  // Determine what colour to show
   if (scrollPercentage >= 75) {
-    headerBackgroundColor.value = '#7f241f';
-  } else {
-    headerBackgroundColor.value = `rgb(${69 + (58 * (scrollPercentage / 75))}, ${12 + (24 * (scrollPercentage / 75))}, ${10 + (21 * (scrollPercentage / 75))})`;
+    headerBackgroundColor.value = '#450c0a';
+  } else{
+    headerBackgroundColor.value = 'rgba( 69, 12, 10, 0.75 )';
   }
 };
 
