@@ -28,28 +28,29 @@
   -webkit-backdrop-filter: blur( 5px );
 }
 </style>
+
 <script setup lang="ts">
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
-const electricButton = document.getElementById('electric-powertrain');
-const combustionButton = document.getElementById('combustion-powertrain');
+// const electricButton = document.getElementById('electric-powertrain');
+// const combustionButton = document.getElementById('combustion-powertrain');
 
 
-const expandAnimation = (element: HTMLElement, url: string) => {
-  gsap.to(element, {
-    duration: 1,
-    width: '100%',
-    height: '100%',
-    ease: 'power1.out',
-    onComplete: () => {
+// const expandAnimation = (element: HTMLElement, url: string) => {
+//   gsap.to(element, {
+//     duration: 1,
+//     width: '100%',
+//     height: '100%',
+//     ease: 'power1.out',
+//     onComplete: () => {
 
-      window.location.href = url;
-    }
+//       window.location.href = url;
+//     }
 
-  });
-};
+//   });
+// };
 
-electricButton?.addEventListener('click', () => expandAnimation(electricButton, '/electric'));
-combustionButton?.addEventListener('click', () => expandAnimation(combustionButton, '/combustion'));
+// electricButton?.addEventListener('click', () => expandAnimation(electricButton, '/electric'));
+// combustionButton?.addEventListener('click', () => expandAnimation(combustionButton, '/combustion'));
 
 </script>
