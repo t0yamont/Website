@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     '@nuxtjs/fontaine',
     '@nuxtjs/tailwindcss',
+    '@hypernym/nuxt-gsap',
   ],
   tailwindcss: {
     configPath: 'tailwind.config.ts',
