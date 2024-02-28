@@ -1,9 +1,11 @@
 <template>
-  <HomepageHero />
-  <HomepageAboutUs />
-  <HomepageAchievements />
-  <HomepageSponsors />
-<!--  <HomepageContactUs />-->
+  <NuxtLayout name="electric">
+    <HomepageHero />
+    <HomepageAboutUs />
+    <HomepageAchievements />
+    <HomepageSponsors />
+    <HomepageContactUs />
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">

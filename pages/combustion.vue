@@ -1,11 +1,14 @@
 <template>
-  <div id="app">
+  <NuxtLayout name="combustion">
+  <div class="py-24 px-6 md:px-12 lg:px-24">
+    <span id="breadcrumbs" class="my-4"><NuxtLink class="underline" to="/">Home</NuxtLink> > <span>Combustion</span></span>
     <h1>SURTES Combustion</h1>
     <div class="flex flex-col md:flex-row gap-4 md:gap-8 py-4 items-center">
       <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry...</p>
     </div>
     <div v-for="i in 3" :key="i" class="liquid"></div>
   </div>
+  </NuxtLayout>
 </template>
 
 <script>
@@ -31,12 +34,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-#app {
-  height: 100vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+<!-- <style lang="scss" scoped>
+.liquid {
   background: linear-gradient(270deg, #ccab19, #023979, #00ffb3);
   background-size: 400% 400%;
   animation: AnimationName 5s ease infinite;
@@ -49,4 +48,4 @@ export default {
   100%{background-position:0% 50%}
 }
 
-</style>
+</style> -->
