@@ -1,5 +1,5 @@
 <template>
-  <h1>SURTES Electric</h1>
+    <Experience />
 </template>
 <script setup lang="ts">
 </script>
