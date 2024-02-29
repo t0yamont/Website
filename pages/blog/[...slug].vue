@@ -1,4 +1,5 @@
 <template>
+  <NuxtLayout name="electric">
   <div id="blog-article" class="max-w-full lg:max-w-5xl mx-auto px-8 xl:px-0">
     <span id="breadcrumbs" class="my-4"><NuxtLink class="underline" to="/">Home</NuxtLink> > <NuxtLink class="underline" to="/blog">Blog</NuxtLink> > <span>{{ article.title }}</span></span>
     <div class="my-4">
@@ -8,6 +9,7 @@
     <NuxtImg v-if="article.keyImage" :src="article.keyImage" class="h-auto w-full rounded-xl" />
     <ContentDoc class="my-8" />
   </div>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
