@@ -20,7 +20,7 @@
 
         </p>
         </div>
-        <NuxtImg src="/img/Homefirst.webp" class="w-full rounded-lg justify-self-center max-md:order-first" />
+        <NuxtImg src="/img/EV_Page_photo.jpg" class="w-full rounded-lg justify-self-center max-md:order-first" />
       </div>
 
       
