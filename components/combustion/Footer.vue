@@ -2,7 +2,7 @@
     <footer class="h-full py-24 px-6 md:px-12 lg:px-24 bg-blue-950 relative bottom-0 left-0 right-0">
         <div id="footer-inner" class="px-6 mp-12 w-full max-w-7xl mx-auto">
           <div id="top">
-              <NuxtImg src="/surtes-logo.svg" class="max-w-xs mb-8" />
+              <NuxtImg src="/surtes-ec-logo.svg" class="max-w-xs mb-8" />
               <p>
                 University of Surrey, Stag Hill<br>
                 Guildford, GU2 7XH<br>
@@ -15,17 +15,11 @@
                 <NuxtLink to="mailto:teamsurtes@surrey.ac.uk" class="p-2">
                   <Icon name="ic:round-mail" color="white" class="text-2xl" />
                 </NuxtLink>
-                <NuxtLink to="https://www.instagram.com/teamsurtes/" class="p-2">
+                <NuxtLink to="https://www.instagram.com/surtes_ec/" class="p-2">
                   <Icon name="fa6-brands:instagram" color="white" class="text-2xl" />
                 </NuxtLink>
-                <NuxtLink to="https://www.facebook.com/TeamSURTES" class="p-2">
-                  <Icon name="fa6-brands:square-facebook" color="white" class="text-2xl" />
-                </NuxtLink>
-                <NuxtLink to="https://uk.linkedin.com/company/team-surtes-surtes-ec" class="p-2">
+                <NuxtLink to="https://uk.linkedin.com/company/surtes-ec?trk=similar-pages" class="p-2">
                   <Icon name="fa6-brands:linkedin" color="white" class="text-2xl" />
-                </NuxtLink>
-                <NuxtLink to="https://www.youtube.com/watch?v=I_Yt8D2lGgY" class="p-2">
-                  <Icon name="fa6-brands:youtube" color="white" class="text-2xl" />
                 </NuxtLink>
               </div>
           </div>

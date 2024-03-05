@@ -3,7 +3,7 @@
       <header :style="{ backgroundColor: headerBackgroundColor }" class="glass fixed top-0 left-0 right-0 h-24 px-8 py-4 bg-mint-500 flex justify-between text-center">
           <div id="logo" class="h-full" :class="{ 'mx-auto': !drawerIsOpen, 'transition-all duration-500': true, 'h-16': drawerIsOpen }">
               <NuxtLink to="/">
-                  <NuxtImg src="/Design sem nome-foto (1).svg" class="h-full mx-auto" />
+                  <NuxtImg src="/surtes-ec-logo.svg" class="h-full mx-auto" />
               </NuxtLink>
           </div>
           <nav id="drawer-links" class="flex gap-x-12 font-black mt-8" v-if="drawerIsOpen">
