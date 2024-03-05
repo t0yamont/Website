@@ -2,16 +2,6 @@
   <NuxtLayout name="electric">
     <div class="py-24 px-6 md:px-12 lg:px-24">
       <span id="breadcrumbs" class="my-4"><NuxtLink class="underline" to="/">Home</NuxtLink> > <span>Electric</span></span>
-
-      
-      <div class="h-80">
-        
-      </div>
-      
-    
-         
-      
-     
       <div class="flex flex-col lg:flex-row gap-4 lg:gap-8 py-4 items-center">
         <div>
           <h1 class="mb-10">SURTES Electric</h1>  
