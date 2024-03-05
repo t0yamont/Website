@@ -4,7 +4,7 @@
     <HomepageAboutUs />
     <HomepageAchievements />
     <HomepageSponsors />
-    <HomepageContactUs />
+    <!--<HomepageContactUs />-->
   </NuxtLayout>
 </template>
 
