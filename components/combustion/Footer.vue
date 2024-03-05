@@ -1,5 +1,5 @@
 <template>
-    <footer class="h-full py-24 px-6 md:px-12 lg:px-24 bg-blue-950 relative bottom-0 left-0 right-0">
+    <footer class="h-full py-24 px-6 md:px-12 lg:px-24 bg-blue-900 relative bottom-0 left-0 right-0">
         <div id="footer-inner" class="px-6 mp-12 w-full max-w-7xl mx-auto">
           <div id="top">
               <NuxtImg src="/surtes-ec-logo.svg" class="max-w-xs mb-8" />
