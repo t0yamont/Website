@@ -1,9 +1,9 @@
 <template>
   <div id="hero" class="homepage-hero h-3/4-screen w-full relative">
       <div id="hero-media" class="h-full w-full bg-gradient-to-b from-surtes-950 to-surtes-900">
-          <video class="h-full w-auto object-cover bg-white m-auto" autoplay loop muted>
+          <video class="h-full w-full object-cover bg-white m-auto" autoplay loop muted>
               <source src="/mov/title-page-broll.mp4" type="video/mp4">
-              Your browser does not support the video tag.
+              Your browser does not support video.
           </video>
       </div>
       <div id="hero-bottom" class="absolute bottom-0 left-0 right-0 text-center">
