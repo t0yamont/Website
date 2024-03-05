@@ -6,13 +6,13 @@
                   <NuxtImg src="/surtes-logo.svg" class="h-full mx-auto" />
               </NuxtLink>
           </div>
-          <nav id="drawer-links" class="flex gap-x-12 font-black" v-if="drawerIsOpen">
+          <nav id="drawer-links" class="flex gap-x-12 font-black mt-4 text-white" v-if="drawerIsOpen">
               <NuxtLink to="/blog" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">News Articles</NuxtLink>
               <NuxtLink to="/sponsors" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">Our Sponsors</NuxtLink>
               <NuxtLink to="/electric" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Electric</NuxtLink>
               <NuxtLink to="/combustion" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Combustion</NuxtLink>
           </nav>
-          <button id="b1" class="block h-full w-16 mr-4 transform hover:scale-110 rounded-md p-0" @click="drawerIsOpen = !drawerIsOpen">
+          <button id="b1" class="block h-full w-16 transform hover:scale-110 rounded-md p-0" @click="drawerIsOpen = !drawerIsOpen">
             <Icon  :name="drawerIsOpen ? 'ic:round-close' : 'ic:baseline-dehaze'" color="white" class="text-3xl lg:text-2xl" />
           </button>
       </header>
@@ -25,17 +25,11 @@
 
 }
 #logo{
-  height: 4.75rem;
+  // height: 4.75rem;
   transition: height 0.5s;
   align-items: center;
 }
 
-#drawer-links{
-  margin-top: 2.2rem;
-}
-#b1{
-  margin-top: 1.1rem;
-}
 .glass {
   background: rgba( 69, 12, 10, 0.75 );
   box-shadow: 0 8px 32px 0 rgba( 69, 12, 10, 0.37 );
