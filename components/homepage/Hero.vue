@@ -11,12 +11,12 @@
         <div id="powertrain-pills" class="grid grid-cols-2 w-1/2 mx-auto gap-4 py-8 min-w-80">
           <div id="electric-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
               <button class="w-full h-full">
-                  <div class="button-text">SURTES Electric</div>
+                  <div class="button-text">Electric</div>
               </button>
           </div>
           <div id="combustion-powertrain" class="glass hover:bg-surtes-950 rounded-full border-2 border-white h-12 min-w-20">
               <button class="w-full h-full">
-                  <div class="button-text">SURTES Combustion</div>
+                  <div class="button-text">Combustion</div>
               </button>
           </div>
         </div>
@@ -30,6 +30,10 @@ background: rgba( 69, 12, 10, 0.75 );
 box-shadow: 0 8px 32px 0 rgba( 69, 12, 10, 0.37 );
 backdrop-filter: blur( 5px );
 -webkit-backdrop-filter: blur( 5px );
+}
+
+.clicked{
+  background-color: rgb(2, 57, 121);
 }
 </style>
 
@@ -92,7 +96,8 @@ onMounted(() => {
 
   electricButton?.addEventListener('click', () => expandAnimation(electricButton, '/electric'));
   combustionButton?.addEventListener('click', () => expandAnimation(combustionButton, '/combustion'));
+  combustionButton?.addEventListener('click', () => { expandAnimation(combustionButton, '/combustion');
+    combustionButton.classList.add('clicked');
+  });
 });
-
-
 </script>
