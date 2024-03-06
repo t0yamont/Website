@@ -18,7 +18,7 @@
           younger students through Concept Class to build a successfully running
           Electric Vehicle in the future.
         </p>
-        <NuxtImg src="/img/EV_Page_photo.jpg" class="rounded-lg " />
+        <NuxtImg src="/img/EV_Page_photo.jpg" class="rounded-lg" />
       </div>
       <div
         class="mb-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
@@ -40,23 +40,24 @@
         </div>
       </div>
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center "
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
       >
         <div
           class="flex flex-col text-center w-full lg:col-span-2 xl:col-span-2"
         >
-          <p class="lg:col-span-2 xl:col-span-3">
-            Awards Won: 
-          </p>
+          <p class="lg:col-span-2 xl:col-span-3">Awards Won:</p>
           <div class="  ">
-            <p class=" mt-4">IMechE Class 1 Most Efficient Car.​</p>
-            <p class="mt-8">Mercedes-AMG HPP Best High Voltage Powertrain Implementation.​​</p>
+            <p class="mt-4">IMechE Class 1 Most Efficient Car.​</p>
+            <p class="mt-8">
+              Mercedes-AMG HPP Best High Voltage Powertrain Implementation.​​
+            </p>
             <p class="mt-8">Placed 11<sup> th </sup> Overall​</p>
-            <p  class="mt-8"> Best UK EV Team </p>
+            <p class="mt-8">Best UK EV Team</p>
           </div>
-         
         </div>
-        <div class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2  max-md:order-first">
+        <div
+          class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2 max-md:order-first"
+        >
           <h2>SE4</h2>
           <NuxtImg src="/img/Car 2019 Running.jpg" class="rounded-lg w-11/12" />
         </div>
@@ -65,25 +66,3 @@
     </div>
   </NuxtLayout>
 </template>
-
-<style type="text/css">
-.st0 {
-  fill: #ffeea9;
-}
-.st1 {
-  fill: #d32436;
-}
-.st2 {
-  fill: #8dd1d3;
-}
-.st3 {
-  fill: #330d00;
-}
-.st4 {
-  fill: none;
-  stroke: #330d00;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 10;
-}
-</style>
