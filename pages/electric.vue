@@ -25,7 +25,7 @@
       >
         <div class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2">
           <h2>SE1</h2>
-          <NuxtImg src="/img/Team 2016 2.jpg" class="rounded-lg w-11/12" />
+          <NuxtImg src="/img/Team-2016-2.jpg" class="rounded-lg w-11/12" />
         </div>
         <div
           class="flex flex-col text-center w-full lg:col-span-2 xl:col-span-2"
@@ -59,7 +59,7 @@
           class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2 max-md:order-first"
         >
           <h2>SE4</h2>
-          <NuxtImg src="/img/Car 2019 Running.jpg" class="rounded-lg w-11/12" />
+          <NuxtImg src="/img/Car-2019-Running.jpg" class="rounded-lg w-11/12" />
         </div>
       </div>
       <!-- <CarModel /> -->
