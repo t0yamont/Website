@@ -34,15 +34,13 @@
       <div class="mb-12 lg:mb-24 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center">
         <div class="flex flex-col w-full lg:col-span-2">
           <h2>SE4</h2>
+          <p class="lg:col-span-2 xl:col-span-3">
+            In 2020, we achieved 11<sup>th</sup> place overall, and 8<sup>th</sup> best UK EV team.
           <p class="lg:col-span-2 xl:col-span-3">Awards Won:</p>
-          <div>
-            <p class="mt-4">IMechE Class 1 Most Efficient Car.</p>
-            <p class="mt-8">
-              Mercedes-AMG HPP Best High Voltage Powertrain Implementation.
-            </p>
-            <p class="mt-8">Placed 11<sup> th </sup> Overall</p>
-            <p class="mt-8">Best UK EV Team</p>
-          </div>
+          <ul>
+            <li class="mt-4">IMechE Class 1 Most Efficient Car</li>
+            <li class="mt-8"> Mercedes-AMG HPP Best High Voltage Powertrain Implementation</li>
+          </ul>
         </div>
         <div class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2 order-first lg:order-last">
           <NuxtImg src="/img/Car-2019-Running.jpg" class="rounded-lg w-11/12" />
