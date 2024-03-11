@@ -6,7 +6,7 @@
                   <NuxtImg src="/surtes-logo.svg" class="h-full mx-auto" />
               </NuxtLink>
           </div>
-          <nav id="drawer-links" class="flex gap-x-12 font-black mt-4 text-white" v-if="drawerIsOpen">
+          <nav id="drawer-links" class="flex gap-x-6 font-black mt-4 text-white" v-if="drawerIsOpen">
               <NuxtLink to="/blog" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">News Articles</NuxtLink>
               <NuxtLink to="/sponsors" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">Our Sponsors</NuxtLink>
               <NuxtLink to="/electric" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Electric</NuxtLink>
