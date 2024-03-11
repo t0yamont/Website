@@ -59,12 +59,18 @@ jobs:
       - name: Create .nuxtrc
         run: echo $'\nautoImport=true\nmodules[]=@nuxthq/studio' >> .nuxtrc
 
+      - name: Check for filenames with spaces in `./public`
+        run: |
+          if find ./public -name "* *" -type f | read; then
+            echo "Error: Filenames with spaces found in ./public folder"
+            exit 1
+          fi
+
       - name: Generate
         run: npx nuxi generate
         env:
           NUXT_PUBLIC_STUDIO_API_URL: https://api.nuxt.studio
           NUXT_PUBLIC_STUDIO_TOKENS: f58249cb011ab7f60a0479ec8be44f9bc2d062763e3fb57ca5cc21d016b3307a
-
 
       - name: Add .nojekyll file
         run: touch .output/public/.nojekyll
