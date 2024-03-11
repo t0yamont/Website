@@ -24,12 +24,12 @@
         class="mb-28 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
       >
         <div class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2">
-          <NuxtImg src="/img/Team 2016 2.jpg" class="rounded-lg w-11/12" />
+          <h2>SE1</h2>
+          <NuxtImg src="/img/Team-2016-2.jpg" class="rounded-lg w-11/12" />
         </div>
         <div
-          class="flex flex-col w-full lg:col-span-2 xl:col-span-2"
+          class="flex flex-col text-center w-full lg:col-span-2 xl:col-span-2"
         >
-          <h2>SE1</h2>
           <p class="lg:col-span-2 xl:col-span-3">
             In 2016 TEAM SURTES has become one of the few teams in the UK to
             switch to electric power. A year later, we successfully passed as 1
@@ -39,11 +39,14 @@
           <p class="mt-8">12<sup>th</sup> Best Overall​</p>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center" >
-        <div class="flex flex-col w-full lg:col-span-2 xl:col-span-2">
-          <h2>SE4</h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
+      >
+        <div
+          class="flex flex-col text-center w-full lg:col-span-2 xl:col-span-2"
+        >
           <p class="lg:col-span-2 xl:col-span-3">Awards Won:</p>
-          <div>
+          <div class="  ">
             <p class="mt-4">IMechE Class 1 Most Efficient Car.​</p>
             <p class="mt-8">
               Mercedes-AMG HPP Best High Voltage Powertrain Implementation.​​
@@ -52,8 +55,11 @@
             <p class="mt-8">Best UK EV Team</p>
           </div>
         </div>
-        <div class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2 max-md:order-first">
-          <NuxtImg src="/img/Car 2019 Running.jpg" class="rounded-lg w-11/12" />
+        <div
+          class="lg:col-span-2 sm:col-auto md:col-auto xl:col-span-2 max-md:order-first"
+        >
+          <h2>SE4</h2>
+          <NuxtImg src="/img/Car-2019-Running.jpg" class="rounded-lg w-11/12" />
         </div>
       </div>
       <!-- <CarModel /> -->
