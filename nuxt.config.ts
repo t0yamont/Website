@@ -23,7 +23,6 @@ export default defineNuxtConfig({
   tailwindcss: {
     configPath: 'tailwind.config.ts',
     exposeConfig: false,
-    injectPosition: 0,
   },
   app: {
     head: {
