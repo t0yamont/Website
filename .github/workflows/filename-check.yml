@@ -18,11 +18,6 @@ on:
 permissions:
   contents: read
 
-# Allow one concurrent deployment
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
   # Build job
   check:
