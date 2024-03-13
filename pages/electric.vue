@@ -36,6 +36,7 @@
           <h2>SE4</h2>
           <p class="lg:col-span-2 xl:col-span-3">
             In 2020, we achieved 11<sup>th</sup> place overall, and 8<sup>th</sup> best UK EV team.
+          </p>
           <p class="lg:col-span-2 xl:col-span-3">Awards Won:</p>
           <ul>
             <li class="mt-4">IMechE Class 1 Most Efficient Car</li>
