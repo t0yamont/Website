@@ -1,0 +1,45 @@
+
+name: check-filenames
+run-name: check filenames
+
+on:
+  # Runs on all pull requests
+  pull_request:
+
+  # Runs on all pushes to `main` branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Add write workflow permissions
+permissions:
+  contents: read
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  # Build job
+  check:
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: .
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [18]
+
+    steps:
+      - name: Check for filenames with spaces in `./public`
+        run: |
+          if find ./public -name "* *" -type f | read; then
+            echo "Error: Filenames with spaces found in ./public folder"
+            exit 1
+          fi
