@@ -1,7 +1,5 @@
 ---
-name: Altair
-logoSrc: /sponsor-logos/altair.svg
-url: https://altair.com/
+name: 'Altair'
+logoSrc: '/sponsor-logos/altair.svg'
+url: 'https://altair.com/'
 ---
-
-
