@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     }
   },
   site: {
-    url: 'https://new.teamsurtes.com/',
+    url: 'https://teamsurtes.com/',
   },
   googleFonts: {
     families: {
