@@ -6,11 +6,13 @@
                   <NuxtImg src="/surtes-ec-logo.svg" class="h-full mx-auto" />
               </NuxtLink>
           </div>
-          <nav id="drawer-links" class="flex gap-x-6 font-black mt-8 text-white" v-if="drawerIsOpen">
+          <nav id="drawer-links" class="flex mt-4" v-if="drawerIsOpen">
+            <div class="flex gap-x-12 font-black text-white overflow-x-auto no-scrollbar">
               <NuxtLink to="/blog" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">News Articles</NuxtLink>
               <NuxtLink to="/sponsors" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">Our Sponsors</NuxtLink>
               <NuxtLink to="/electric" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Electric</NuxtLink>
               <NuxtLink to="/combustion" class="h-12 transform hover:scale-110" @click="drawerIsOpen = false">SURTES Combustion</NuxtLink>
+            </div>
           </nav>
           <button id="b1" class="block h-full w-16 transform hover:scale-110 rounded-md p-0" @click="drawerIsOpen = !drawerIsOpen">
             <Icon  :name="drawerIsOpen ? 'ic:round-close' : 'ic:baseline-dehaze'" color="white" class="text-3xl lg:text-2xl" />
@@ -20,6 +22,7 @@
 </template>
 
 <style scoped lang="scss">
+
 #navigation > header {
   background: var(--header-bg);
 }
@@ -27,6 +30,22 @@
 #logo{
   transition: height 0.5s;
   align-items: center;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-right: 1rem;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #drawer-links {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
 }
 </style>
 
