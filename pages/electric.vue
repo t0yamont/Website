@@ -214,7 +214,7 @@ export default {
     <div class="webgl-wrapper">
       <canvas ref="experience"></canvas>
       <div class="point" id="point0" ref="point0" @click="clickHandler">
-        <div class="point-label">Label1</div>
+        <div class="point-label">Powertrain</div>
       </div>
    
     </div>
