@@ -18,6 +18,7 @@ export default {
     let raycaster = new THREE.Raycaster();
     let car;
     const pointer = new THREE.Vector2();
+    let enable = ref(true);
     // let contentDiv, lastContent, targetLabel;
 
     const points = ref([
@@ -28,17 +29,12 @@ export default {
 
     onMounted(async () => {
       point0.value = document.getElementById("point0");
-     
 
       if (point0.value) {
-          points.value[0].element = point0.value;
-
-        }
-
-      if (window.innerWidth < 1280) {
-        console.log(window.innerWidth);
+        points.value[0].element = point0.value;
       }
 
+     
 
       init();
       animate();
@@ -48,24 +44,20 @@ export default {
         pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
       }
 
-      const clickHandler=  (_event) => {
+      const clickHandler = (_event) => {
+        const parent = _event.target.parentNode;
+        const label = parent.children[0];
 
-     
-    
-        const parent = _event.target.parentNode
-    const label = parent.children[0]
+        if (label.innerHTML.includes("Label1")) {
+          gsap.to(camera.position, {
+            duration: 1,
+            x: 0.022,
+            y: 1.14,
+            z: -1.918,
+          });
+        }
+      };
 
-          if (label.innerHTML.includes("Label1")) {
-            gsap.to(camera.position, {
-              duration: 1,
-              x: 0.022,
-              y: 1.14,
-              z: -1.918,
-            });
-          } 
-        } 
-
-     
       function addObjects() {
         // Add objects to the scene
         geometry = new THREE.BoxGeometry(1, 1, 1);
@@ -111,6 +103,11 @@ export default {
 
       function init() {
 
+        if (window.innerWidth < 1168) {
+
+          enable.value = false;
+      }
+
         scene = new THREE.Scene();
 
         // Initialize camera, scene, and renderer
@@ -124,7 +121,6 @@ export default {
         camera.lookAt(0, 0, 0);
         scene.add(camera);
 
-        console.log(camera);
 
         textureLoad();
 
@@ -135,9 +131,6 @@ export default {
 
         addObjects();
 
-
-
-      
         renderer = new THREE.WebGLRenderer({
           canvas: experience.value,
           antialias: true,
@@ -159,6 +152,15 @@ export default {
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
+        if (window.innerWidth < 1168) {
+          enable.value = false;
+          // console.log(window.innerWidth, enable.value);
+
+
+        } else {
+          enable.value = true;
+          // console.log(window.innerWidth, enable.value);
+        }
       }
 
       function animate() {
@@ -204,7 +206,7 @@ export default {
       point0.value.addEventListener("click", clickHandler);
     });
 
-    return { experience };
+    return { experience, enable };
   },
 };
 </script>
@@ -214,9 +216,8 @@ export default {
     <div class="webgl-wrapper">
       <canvas ref="experience"></canvas>
       <div class="point" id="point0" ref="point0" @click="clickHandler">
-        <div class="point-label">Powertrain</div>
+        <div class="point-label" v-if="enable">Powertrain</div>
       </div>
-   
     </div>
 
     <div class="py-24 px-6 md:px-12 lg:px-24">
@@ -301,7 +302,7 @@ export default {
   position: absolute;
   top: -20px;
   left: -20px;
-  width: 60px;
+  width: 80px;
   height: 40px;
   border-radius: 10%;
   background: #00000077;
@@ -337,8 +338,6 @@ export default {
   /* effect 2 */
 }
 
-
-
 .point.visible .point-label {
   transform: scale(1, 1);
 }
@@ -370,11 +369,8 @@ export default {
   font-size: medium;
 }
 
-
-
-
-
 .point.visible .label {
   transform: scale(1, 1);
 }
+
 </style>
