@@ -48,13 +48,15 @@ export default {
         const parent = _event.target.parentNode;
         const label = parent.children[0];
 
-        if (label.innerHTML.includes("Label1")) {
+        if (label.innerHTML.includes("Powertrain")) {
           gsap.to(camera.position, {
             duration: 1,
             x: 0.022,
             y: 1.14,
             z: -1.918,
           });
+          // console.log("animating");
+
         }
       };
 
@@ -190,7 +192,9 @@ export default {
               } else {
                 point.element.classList.add("visible");
               }
+              
             }
+
 
             const translateX = screenPosition.x * window.innerWidth * 0.5;
             const translateY =
