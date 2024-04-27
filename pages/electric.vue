@@ -22,7 +22,7 @@ export default {
     // let contentDiv, lastContent, targetLabel;
 
     const points = ref([
-      { position: new THREE.Vector3(0.2, 0.3, -1.2), element: null },
+      { position: new THREE.Vector3(0.2, 0.5, -1.2), element: null },
       { position: new THREE.Vector3(-0.5, 0.5, 0), element: null },
       { position: new THREE.Vector3(0.7, 0.3, 0.7), element: null },
     ]);
@@ -34,14 +34,16 @@ export default {
         points.value[0].element = point0.value;
       }
 
-     
+      // console.log(experience.value.parentNode.clientWidth, experience.value.parentNode.clientWidth);
 
       init();
       animate();
 
       function onPointerMove(event) {
-        pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-        pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+        pointer.x =
+          (event.clientX / experience.value.parentNode.clientWidth) * 2 - 1;
+        pointer.y =
+          -(event.clientY / experience.value.parentNode.clientHeight) * 2 + 1;
       }
 
       const clickHandler = (_event) => {
@@ -56,7 +58,6 @@ export default {
             z: -1.918,
           });
           // console.log("animating");
-
         }
       };
 
@@ -104,25 +105,23 @@ export default {
       }
 
       function init() {
-
-        if (window.innerWidth < 1168) {
-
+        if (experience.value.parentNode.clientWidth < 1024) {
           enable.value = false;
-      }
+        }
 
         scene = new THREE.Scene();
 
         // Initialize camera, scene, and renderer
         camera = new THREE.PerspectiveCamera(
           70,
-          window.innerWidth / window.innerHeight,
+          experience.value.parentNode.clientWidth /
+            experience.value.parentNode.clientHeight,
           0.01,
           10
         );
         camera.position.set(-2.5, 1.6, 0.3);
         camera.lookAt(0, 0, 0);
         scene.add(camera);
-
 
         textureLoad();
 
@@ -137,7 +136,11 @@ export default {
           canvas: experience.value,
           antialias: true,
         });
-        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        renderer.setSize(
+          experience.value.parentNode.clientWidth,
+          experience.value.parentNode.clientHeight
+        );
 
         //add orbit controls
         controls = new OrbitControls(camera, renderer.domElement);
@@ -151,17 +154,20 @@ export default {
       }
 
       function onWindowResize() {
-        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.aspect =
+          experience.value.parentNode.clientWidth /
+          experience.value.parentNode.clientHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        if (window.innerWidth < 1168) {
+        renderer.setSize(
+          experience.value.parentNode.clientWidth,
+          experience.value.parentNode.clientHeight
+        );
+        if (experience.value.parentNode.clientWidth < 1168) {
           enable.value = false;
-          // console.log(window.innerWidth, enable.value);
-
-
+          // console.log(experience.value.parentNode.clientWidth, enable.value);
         } else {
           enable.value = true;
-          // console.log(window.innerWidth, enable.value);
+          // console.log(experience.value.parentNode.clientWidth, enable.value);
         }
       }
 
@@ -192,13 +198,14 @@ export default {
               } else {
                 point.element.classList.add("visible");
               }
-              
             }
 
-
-            const translateX = screenPosition.x * window.innerWidth * 0.5;
+            const translateX =
+              screenPosition.x * experience.value.parentNode.clientWidth * 0.5;
             const translateY =
-              -screenPosition.y * window.innerHeight * 0.5 + 100;
+              -screenPosition.y *
+              experience.value.parentNode.clientHeight *
+              0.5;
             point.element.style.transform = `translateX(${translateX}px) translateY(${translateY}px)`;
           }
         }
@@ -217,14 +224,19 @@ export default {
 
 <template>
   <NuxtLayout name="electric">
-    <div class="webgl-wrapper">
-      <canvas ref="experience"></canvas>
+    <div class="webgl-wrapper px-6 md:px-12 lg:px-24">
+      <div
+        class="w-full md:h-[35rem] lg:h-[41rem] xl:h-[45rem] 2xl:h-[50rem] h-[24rem] overflow-hidden"
+      >
+        <canvas ref="experience" class="rounded-2xl"></canvas>
+      
+      </div>
       <div class="point" id="point0" ref="point0" @click="clickHandler">
         <div class="point-label" v-if="enable">Powertrain</div>
       </div>
     </div>
 
-    <div class="py-24 px-6 md:px-12 lg:px-24">
+    <div class="py-12 px-6 md:px-12 lg:px-24">
       <span id="breadcrumbs" class="my-4"
         ><NuxtLink class="underline" to="/">Home</NuxtLink> ><span
           >Electric</span
@@ -267,7 +279,7 @@ export default {
         </div>
       </div>
       <div
-        class="mb-12 lg:mb-24 grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
+        class="grid grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
       >
         <div class="flex flex-col w-full lg:col-span-2">
           <h2>SE4</h2>
@@ -296,6 +308,13 @@ export default {
 </template>
 
 <style scoped>
+.webgl-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .point {
   position: absolute;
   top: 50%;
@@ -376,5 +395,7 @@ export default {
 .point.visible .label {
   transform: scale(1, 1);
 }
+
+/* full screen button */
 
 </style>
