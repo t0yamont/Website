@@ -276,7 +276,7 @@ export default {
           />
           <NuxtImg
             v-else
-            src="/Car/full-screen.svg"
+            src="/Car/fullScreen.svg"
             alt="full screen"
             class="fullScreen"
           />
