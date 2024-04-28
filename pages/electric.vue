@@ -76,7 +76,8 @@ export default {
         }
       }
 
-      function toggleFullscreen() {
+
+      function toggleFullscreen(event) {
         if (document.fullscreenElement) {
           exitFullscreen();
           fullscreen.value = false;
@@ -240,6 +241,11 @@ export default {
       const fullscreenButton = document.getElementById("fullscreen-button");
       fullscreenButton.addEventListener("click", toggleFullscreen);
       point0.value.addEventListener("click", clickHandler);
+      window.addEventListener("fullscreenchange", (event) => {
+        if (!document.fullscreenElement) {
+          fullscreen.value = false;
+        }
+      });
     });
 
     return { experience, enable, fullscreen };
@@ -262,7 +268,12 @@ export default {
           <!-- {{ logo }} -->
           <!-- {{ fullScreenSvg }}
            -->
-          <NuxtImg v-if="fullscreen" src="/Car/close.svg" class="minimize" alt="" />
+          <NuxtImg
+            v-if="fullscreen"
+            src="/Car/close.svg"
+            class="minimize"
+            alt="X"
+          />
           <NuxtImg
             v-else
             src="/Car/full-screen.svg"
