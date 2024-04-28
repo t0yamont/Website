@@ -19,6 +19,7 @@ export default {
     let car;
     const pointer = new THREE.Vector2();
     let enable = ref(true);
+    let fullscreen = ref(false);
     // let contentDiv, lastContent, targetLabel;
 
     const points = ref([
@@ -28,6 +29,10 @@ export default {
     ]);
 
     onMounted(async () => {
+      if (window.innerWidth < 1124 && enable.value === true) {
+        enable.value = false;
+      }
+
       point0.value = document.getElementById("point0");
 
       if (point0.value) {
@@ -60,6 +65,26 @@ export default {
           // console.log("animating");
         }
       };
+
+      function exitFullscreen() {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+
+      function toggleFullscreen() {
+        if (document.fullscreenElement) {
+          exitFullscreen();
+          fullscreen.value = false;
+        } else {
+          experience.value.parentNode.requestFullscreen();
+          fullscreen.value = true;
+        }
+      }
 
       function addObjects() {
         // Add objects to the scene
@@ -105,10 +130,6 @@ export default {
       }
 
       function init() {
-        if (experience.value.parentNode.clientWidth < 1024) {
-          enable.value = false;
-        }
-
         scene = new THREE.Scene();
 
         // Initialize camera, scene, and renderer
@@ -162,9 +183,11 @@ export default {
           experience.value.parentNode.clientWidth,
           experience.value.parentNode.clientHeight
         );
-        if (experience.value.parentNode.clientWidth < 1168) {
+        if (
+          window.innerWidth < 1124 &&
+          experience.value.parentNode.clientWidth < 1124
+        ) {
           enable.value = false;
-          // console.log(experience.value.parentNode.clientWidth, enable.value);
         } else {
           enable.value = true;
           // console.log(experience.value.parentNode.clientWidth, enable.value);
@@ -214,10 +237,12 @@ export default {
         renderer.render(scene, camera);
       }
 
+      const fullscreenButton = document.getElementById("fullscreen-button");
+      fullscreenButton.addEventListener("click", toggleFullscreen);
       point0.value.addEventListener("click", clickHandler);
     });
 
-    return { experience, enable };
+    return { experience, enable, fullscreen };
   },
 };
 </script>
@@ -226,13 +251,28 @@ export default {
   <NuxtLayout name="electric">
     <div class="webgl-wrapper px-6 md:px-12 lg:px-24">
       <div
-        class="w-full md:h-[35rem] lg:h-[41rem] xl:h-[45rem] 2xl:h-[50rem] h-[24rem] overflow-hidden"
+        class="w-full md:h-[35rem] lg:h-[41rem] xl:h-[45rem] 2xl:h-[50rem] h-[24rem] relative"
       >
-        <canvas ref="experience" class="rounded-2xl"></canvas>
-      
-      </div>
-      <div class="point" id="point0" ref="point0" @click="clickHandler">
-        <div class="point-label" v-if="enable">Powertrain</div>
+        <canvas ref="experience" class="relative rounded-2xl"></canvas>
+        <button
+          id="fullscreen-button"
+          class="absolute top-3 left-3 px-4 py-2 z-10"
+          @click="toggleFullscreen"
+        >
+          <!-- {{ logo }} -->
+          <!-- {{ fullScreenSvg }}
+           -->
+          <NuxtImg v-if="fullscreen" src="/Car/close.svg" class="minimize" alt="" />
+          <NuxtImg
+            v-else
+            src="/Car/full-screen.svg"
+            alt="full screen"
+            class="fullScreen"
+          />
+        </button>
+        <div class="point" id="point0" ref="point0" @click="clickHandler">
+          <div class="point-label" v-if="enable">Powertrain</div>
+        </div>
       </div>
     </div>
 
@@ -397,5 +437,48 @@ export default {
 }
 
 /* full screen button */
+#fullscreen-button {
+  margin: 1px;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5px;
 
+  cursor: pointer;
+  /* transform: scale(0, 0); */
+  transition: transform 0.3s;
+
+  /* efferct 1 */
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
+  text-shadow: none;
+  transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+
+  &:hover {
+    border: 1px solid;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5),
+      0 0 20px rgba(255, 255, 255, 0.2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 15px;
+  }
+
+  &:hover .fullScreen {
+    transform: scale(1.1, 1.1);
+  }
+
+  &:hover .minimize {
+    transform: scale(0.8, 0.8);
+  }
+}
+
+.fullScreen {
+  /* border-radius: 50%; */
+  transition: transform 0.3s;
+}
+
+.minimize {
+  /* border-radius: 50%; */
+  transition: transform 0.3s;
+}
 </style>
