@@ -4,6 +4,7 @@ import { ref, onMounted } from "vue";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
+import GUI from "lil-gui";
 
 export default {
   setup() {
@@ -20,6 +21,11 @@ export default {
     const pointer = new THREE.Vector2();
     let enable = ref(true);
     let fullscreen = ref(false);
+    let cameraPosition = {
+      x: 0.022,
+      y: 1.14,
+      z: -1.918,
+    };
     // let contentDiv, lastContent, targetLabel;
 
     const points = ref([
@@ -29,9 +35,29 @@ export default {
     ]);
 
     onMounted(async () => {
-      if (window.innerWidth < 1124 && enable.value === true) {
-        enable.value = false;
+      function checkDevice() {
+        if (window.innerWidth < 1124 && enable.value === true) {
+          console.log("remov");
+          enable.value = false;
+          if (camera && controls) {
+            console.log("lee");
+            camera.fov = 45;
+            controls.minDistance = 2.0;
+            controls.maxDistance = 2.5;
+            camera.zoom = 0.5;
+            controls.update();
+            camera.updateProjectionMatrix();
+          }
+        } else if (window.innerWidth >= 1124 && enable.value === false) {
+          if (camera && controls) {
+            console.log("changing camera");
+            camera.fov = 65;
+            camera.zoom = 1;
+            camera.updateProjectionMatrix();
+          }
+        }
       }
+      checkDevice();
 
       point0.value = document.getElementById("point0");
 
@@ -64,6 +90,8 @@ export default {
           });
           // console.log("animating");
         }
+        // controls.autoRotate = false;
+        // controls.update();
       };
 
       function exitFullscreen() {
@@ -129,18 +157,49 @@ export default {
         otherBakedTexture.colorSpace = THREE.SRGBColorSpace;
       }
 
+      function addGUI() {
+        const gui = new GUI();
+        gui.add(camera.position, "x", -10, 10, 0.01);
+        gui.add(camera.position, "y", -10, 10, 0.01);
+        gui.add(camera.position, "z", -10, 10, 0.01);
+        gui.add(camera, "fov", 1, 180).onChange(() => {
+          camera.updateProjectionMatrix();
+        });
+        gui.add(camera, "near", 0.01, 10).onChange(() => {
+          camera.updateProjectionMatrix();
+        });
+        gui.add(camera, "far", 0.01, 10).onChange(() => {
+          camera.updateProjectionMatrix();
+        });
+        gui.add(camera, "zoom", 0.01, 10).onChange(() => {
+          camera.updateProjectionMatrix();
+        });
+        gui.open();
+      }
+
+      addGUI();
+
       function init() {
         scene = new THREE.Scene();
 
         // Initialize camera, scene, and renderer
         camera = new THREE.PerspectiveCamera(
-          70,
+          65,
           experience.value.parentNode.clientWidth /
             experience.value.parentNode.clientHeight,
           0.01,
           10
         );
-        camera.position.set(-2.5, 1.6, 0.3);
+
+        //  x: 0.022,
+        // y: 1.14,
+        //     z: -1.918,
+
+        camera.position.set(
+          cameraPosition.x,
+          cameraPosition.y,
+          cameraPosition.z
+        );
         camera.lookAt(0, 0, 0);
         scene.add(camera);
 
@@ -165,11 +224,25 @@ export default {
 
         //add orbit controls
         controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableZoom = false;
-        // controls.enablePan = false;
+        // controls.autoRotate = true;
+        // controls.autoRotateSpeed = 0.1;
+        controls.enableZoom = true;
+        controls.enablePan = false;
         controls.enableDamping = true;
+        controls.dampingFactor = 0.03;
+        controls.maxPolarAngle = Math.PI / 2 - 0.3;
         // renderer.render(scene, camera);
-
+        controls.minDistance = 2.0;
+        controls.maxDistance = 2.5;
+        if (enable.value === false) {
+          console.log("lee");
+          camera.fov = 45;
+          controls.minDistance = 2.0;
+          controls.maxDistance = 2.5;
+          camera.zoom = 0.5;
+          controls.update();
+          camera.updateProjectionMatrix();
+        }
         window.addEventListener("resize", onWindowResize);
         window.addEventListener("pointermove", onPointerMove);
       }
@@ -183,19 +256,13 @@ export default {
           experience.value.parentNode.clientWidth,
           experience.value.parentNode.clientHeight
         );
-        if (
-          window.innerWidth < 1124 &&
-          experience.value.parentNode.clientWidth < 1124
-        ) {
-          enable.value = false;
-        } else {
-          enable.value = true;
-          // console.log(experience.value.parentNode.clientWidth, enable.value);
-        }
+
+        checkDevice();
       }
 
       function animate() {
         controls.update();
+        console.log(camera.zoom);
 
         for (const point of points.value) {
           // console.log(point);
