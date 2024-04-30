@@ -177,7 +177,7 @@ export default {
         gui.open();
       }
 
-      addGUI();
+      // addGUI();
 
       function init() {
         scene = new THREE.Scene();
@@ -312,6 +312,17 @@ export default {
           fullscreen.value = false;
         }
       });
+
+      const scrollHandler = (event) => {
+        event.preventDefault();
+        const elm = document.getElementById("breadcrumbs");
+        console.log("scrolling");
+
+        elm.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+
+      const scrollDown = document.querySelector(".scroll-down");
+      scrollDown.addEventListener("click", scrollHandler);
     });
 
     return { experience, enable, fullscreen };
@@ -321,7 +332,9 @@ export default {
 
 <template>
   <NuxtLayout name="electric">
-    <div class="webgl-wrapper px-6 md:px-12 lg:px-24">
+    <div
+      class="webgl-wrapper px-6 md:px-12 lg:px-24 relative overflow flex justify-center content-center flex-col"
+    >
       <div
         class="w-full md:h-[35rem] lg:h-[41rem] xl:h-[45rem] 2xl:h-[50rem] h-[24rem] relative"
       >
@@ -421,13 +434,19 @@ export default {
             </svg>
           </div>
         </button>
+
         <div class="point" id="point0" ref="point0" @click="clickHandler">
           <div class="point-label" v-if="enable">Powertrain</div>
         </div>
       </div>
+      <div class="flex items-center justify-center">
+        <div class="trigger-scroll mt-2 lg:mt-6 relative">
+          <button class="scroll-down" @click="scrollHandler"></button>
+        </div>
+      </div>
     </div>
 
-    <div class="py-12 px-6 md:px-12 lg:px-24">
+    <div class="py-4 md:py-12 px-6 md:px-12 lg:px-24">
       <span id="breadcrumbs" class="my-4"
         ><NuxtLink class="underline" to="/">Home</NuxtLink> ><span
           >Electric</span
@@ -436,6 +455,7 @@ export default {
       <h1 class="mb-10">SURTES Electric</h1>
       <div
         class="mb-12 lg:mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-8 py-4 items-center"
+        id="first-section"
       >
         <p class="lg:col-span-2 xl:col-span-3">
           Team SURTES was one of the first teams to bring a successful electric
@@ -631,5 +651,37 @@ export default {
 .minimize {
   /* border-radius: 50%; */
   transition: transform 0.3s;
+}
+
+/* scroll down button */
+
+.scroll-down {
+  opacity: 1;
+  scroll-behavior: smooth;
+}
+
+.scroll-down {
+  scroll-behavior: smooth;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  z-index: 2;
+  transform: scale(1);
+}
+
+.scroll-down:before {
+  position: absolute;
+  top: calc(50% - 8px);
+  left: calc(50% - 6px);
+  transform: rotate(-45deg);
+  display: block;
+  width: 12px;
+  height: 12px;
+  content: "";
+  border: 2px solid white;
+  border-width: 0px 0 2px 2px;
+  scroll-behavior: smooth;
 }
 </style>
