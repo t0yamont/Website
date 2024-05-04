@@ -131,7 +131,7 @@ export default {
             if (child.name.includes("Car")) {
               child.material = bodyBakedMaterial;
             } else {
-              child.material = otherBakedMaterial;l
+              child.material = otherBakedMaterial;
             }
           });
           // gltf.scene.position.x = -1
