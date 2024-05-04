@@ -37,10 +37,8 @@ export default {
     onMounted(async () => {
       function checkDevice() {
         if (window.innerWidth < 1124 && enable.value === true) {
-          console.log("remov");
           enable.value = false;
           if (camera && controls) {
-            console.log("lee");
             camera.fov = 45;
             controls.minDistance = 2.0;
             controls.maxDistance = 2.5;
@@ -50,7 +48,6 @@ export default {
           }
         } else if (window.innerWidth >= 1124 && enable.value === false) {
           if (camera && controls) {
-            console.log("changing camera");
             camera.fov = 65;
             camera.zoom = 1;
             camera.updateProjectionMatrix();
@@ -134,7 +131,7 @@ export default {
             if (child.name.includes("Car")) {
               child.material = bodyBakedMaterial;
             } else {
-              child.material = otherBakedMaterial;
+              child.material = otherBakedMaterial;l
             }
           });
           // gltf.scene.position.x = -1
@@ -235,7 +232,6 @@ export default {
         controls.minDistance = 2.0;
         controls.maxDistance = 2.5;
         if (enable.value === false) {
-          console.log("lee");
           camera.fov = 45;
           controls.minDistance = 2.0;
           controls.maxDistance = 2.5;
@@ -262,9 +258,7 @@ export default {
 
       function animate() {
         controls.update();
-        console.log(camera.zoom);
-
-        for (const point of points.value) {
+       	for (const point of points.value) {
           // console.log(point);
           if (point.element) {
             const screenPosition = point.position.clone().project(camera);
@@ -316,7 +310,6 @@ export default {
       const scrollHandler = (event) => {
         event.preventDefault();
         const elm = document.getElementById("breadcrumbs");
-        console.log("scrolling");
 
         elm.scrollIntoView({ behavior: "smooth", block: "start" });
       };
